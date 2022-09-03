@@ -17,5 +17,6 @@ func onClick(pos):
 	var b = BLOCK_SCENE.instance()
 	b.position = pos
 	b.linear_velocity = Vector2(500,-100)
+	b.angular_velocity = 5
 	b.mass = .3
 	add_child(b)
