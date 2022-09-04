@@ -33,6 +33,7 @@ func _process(delta):
 			current_rock = null
 	else: 
 		$Camera2D.position.x = 500
+	
 
 func onClick(pos):
 	if current_rock: return

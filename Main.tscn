@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://blocks/Block_1x1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scripts/Catapult.gd" type="Script" id=8]
 [ext_resource path="res://assets/cata-arm.png" type="Texture" id=9]
 [ext_resource path="res://assets/cata-base.png" type="Texture" id=10]
+[ext_resource path="res://scripts/Line2DProyection.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=2]
 resource_name = "asault"
@@ -210,3 +211,8 @@ text = "30f
 45*"
 align = 1
 valign = 1
+
+[node name="Line2DProyection" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, 6, 0 )
+default_color = Color( 0.827451, 1, 0, 1 )
+script = ExtResource( 11 )
