@@ -9,5 +9,5 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseButton: 
-		if event.pressed:
+		if event.button_index == 1 && event.pressed:
 			emit_signal("im_click",event.position)

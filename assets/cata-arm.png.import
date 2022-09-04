@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/blk_large_1.png-05d4142afbb8301f46e48460334f698f.stex"
+path="res://.import/cata-arm.png-2dfeaecf6768b44f99478d859524e97e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/blk_large_1.png"
-dest_files=[ "res://.import/blk_large_1.png-05d4142afbb8301f46e48460334f698f.stex" ]
+source_file="res://assets/cata-arm.png"
+dest_files=[ "res://.import/cata-arm.png-2dfeaecf6768b44f99478d859524e97e.stex" ]
 
 [params]
 
