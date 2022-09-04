@@ -5,6 +5,7 @@ var enemies_counter = 0
 var force = 500
 var angle = 45
 var current_rock = null
+var shadow_rock = null
 
 func _ready():
 	randomize()
@@ -33,7 +34,21 @@ func _process(delta):
 			current_rock = null
 	else: 
 		$Camera2D.position.x = 500
+	play_shadow()
 	
+func play_shadow():
+	if !shadow_rock:
+		var b = ROCK_SCENE.instance()
+		b.position = $Catapult.position + Vector2(0,-100)
+		b.linear_velocity = polar2cartesian(force,deg2rad(-angle))
+		b.collision_mask = 0
+		b.collision_layer = 0
+		b.modulate = Color(.2,.2,.2,.2)
+		add_child(b)
+		shadow_rock = b
+		yield(get_tree().create_timer(1),"timeout")
+		shadow_rock.queue_free()
+		shadow_rock = null
 
 func onClick(pos):
 	if current_rock: return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://blocks/Block_1x1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://assets/cata-arm.png" type="Texture" id=9]
 [ext_resource path="res://assets/cata-base.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Line2DProyection.gd" type="Script" id=11]
+[ext_resource path="res://blocks/Rock1.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=2]
 resource_name = "asault"
@@ -29,14 +30,23 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 961, 84 )
+extents = Vector2( 1229, 84 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 86, 557.5 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 572, 301 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -285.0
+margin_right = 2276.0
+margin_bottom = 625.0
 texture = ExtResource( 3 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Catapult" type="Node2D" parent="."]
 position = Vector2( 73, 423 )
@@ -59,8 +69,12 @@ anims/asault = SubResource( 2 )
 position = Vector2( 291, 441 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 287, 67 )
+position = Vector2( 729, 67 )
 shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
+position = Vector2( 1872, -406.5 )
+shape = SubResource( 3 )
 
 [node name="Wall" type="Node2D" parent="."]
 
@@ -216,3 +230,9 @@ valign = 1
 points = PoolVector2Array( 0, 0, 6, 0 )
 default_color = Color( 0.827451, 1, 0, 1 )
 script = ExtResource( 11 )
+
+[node name="RockShadow" parent="." instance=ExtResource( 12 )]
+modulate = Color( 0.290196, 0.290196, 0.290196, 0.541176 )
+position = Vector2( 225, 90 )
+collision_layer = 0
+collision_mask = 0
