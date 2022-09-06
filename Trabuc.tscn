@@ -42,34 +42,34 @@ shape = SubResource( 7 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Arm"]
 position = Vector2( -79.5332, -0.352493 )
 rotation = -0.174533
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
 
 [node name="ReloadPoint" type="Node2D" parent="Arm"]
 position = Vector2( -59, 4 )
 
 [node name="Base" type="RigidBody2D" parent="."]
-position = Vector2( 0, -34 )
-mass = 200.0
+position = Vector2( -17, -26 )
+mass = 2000.0
 
 [node name="Sprite" type="Sprite" parent="Base"]
+position = Vector2( 17, -8 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Base"]
-position = Vector2( 0, 29.5 )
+position = Vector2( 17, 21.5 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Base"]
-position = Vector2( 10, 16.5 )
+position = Vector2( 27, 8.5 )
 shape = SubResource( 5 )
 
 [node name="Label" type="Label" parent="Base"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -63.0
-margin_top = 16.0
-margin_right = 65.0
-margin_bottom = 144.0
+margin_left = -46.0
+margin_top = 8.0
+margin_right = 82.0
+margin_bottom = 136.0
 custom_colors/font_color = Color( 0.988235, 0.984314, 0.709804, 1 )
 custom_fonts/font = ExtResource( 4 )
 text = "100"

@@ -10,7 +10,7 @@
 [ext_resource path="res://Trabuc.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1229, 84 )
+extents = Vector2( 920.5, 84 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 86, 557.5 )
@@ -18,26 +18,32 @@ extents = Vector2( 86, 557.5 )
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = -285.0
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 500, 300 )
+current = true
+smoothing_enabled = true
+
+[node name="Bg" type="TextureRect" parent="."]
+margin_left = -464.0
 margin_top = -12.0
-margin_right = 2276.0
+margin_right = 2272.0
 margin_bottom = 613.0
 texture = ExtResource( 3 )
 stretch_mode = 2
 
 [node name="Floor" type="StaticBody2D" parent="."]
-position = Vector2( 291, 441 )
+position = Vector2( 291, 412 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 729, 67 )
+position = Vector2( 420.5, 138 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
-position = Vector2( 1872, -406.5 )
+position = Vector2( 1253, -406.5 )
 shape = SubResource( 3 )
 
 [node name="Wall" type="Node2D" parent="."]
+position = Vector2( 0, 42 )
 
 [node name="Block_1x1" parent="Wall" instance=ExtResource( 1 )]
 position = Vector2( 536, 408 )
@@ -68,7 +74,7 @@ rotation = 1.5708
 position = Vector2( 568, 248 )
 
 [node name="Wall2" type="Node2D" parent="."]
-position = Vector2( 271, 0 )
+position = Vector2( 271, 42 )
 
 [node name="Block_2x2" parent="Wall2" instance=ExtResource( 4 )]
 position = Vector2( 577, 392 )
@@ -82,7 +88,7 @@ position = Vector2( 577, 296 )
 rotation = 1.5708
 
 [node name="Wall4" type="Node2D" parent="."]
-position = Vector2( 528, 0 )
+position = Vector2( 528, 42 )
 
 [node name="Block_2x2" parent="Wall4" instance=ExtResource( 4 )]
 position = Vector2( 577, 392 )
@@ -96,7 +102,7 @@ position = Vector2( 577, 296 )
 rotation = 1.5708
 
 [node name="Wall3" type="Node2D" parent="."]
-position = Vector2( 447, 0 )
+position = Vector2( 447, 42 )
 
 [node name="Block_2x2" parent="Wall3" instance=ExtResource( 4 )]
 position = Vector2( 529, 392 )
@@ -114,7 +120,7 @@ position = Vector2( 529, 232 )
 rotation = 1.5708
 
 [node name="Enems" type="Node2D" parent="."]
-position = Vector2( 447, 0 )
+position = Vector2( 447, 42 )
 
 [node name="Enemy6" parent="Enems" instance=ExtResource( 6 )]
 position = Vector2( 670, 256 )
@@ -135,17 +141,23 @@ position = Vector2( 529, 192 )
 position = Vector2( 388, 256 )
 
 [node name="Block_large_1" parent="." instance=ExtResource( 5 )]
-position = Vector2( 903, 224 )
+position = Vector2( 903, 266 )
 rotation = -0.523599
 
 [node name="Block_large_2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1049, 224 )
+position = Vector2( 1049, 266 )
 rotation = 0.523599
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 512, 301 )
-current = true
-smoothing_enabled = true
+[node name="Block_1x1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 316, 449 )
+mode = 1
+
+[node name="Block_1x2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -45, 449 )
+mode = 1
+
+[node name="Trabuc" parent="." instance=ExtResource( 13 )]
+position = Vector2( 141, 465 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -165,12 +177,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -270.0
-margin_top = -149.0
-margin_right = 270.0
-margin_bottom = -85.0
+margin_left = -310.5
+margin_top = -88.0
+margin_right = 310.5
+margin_bottom = -24.0
 custom_fonts/font = ExtResource( 7 )
-text = "Presiona para recargar.."
+text = "Presiona [A] para recargar.."
 align = 1
 valign = 1
 
@@ -199,17 +211,3 @@ custom_fonts/font = ExtResource( 7 )
 text = "NONE"
 align = 1
 valign = 1
-
-[node name="Block_1x1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 316, 408 )
-mode = 1
-
-[node name="Block_1x2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -45, 408 )
-mode = 1
-
-[node name="Trabuc" parent="." instance=ExtResource( 13 )]
-position = Vector2( 141, 417 )
-
-[node name="ShadowsRocks" type="Timer" parent="."]
-wait_time = 0.3

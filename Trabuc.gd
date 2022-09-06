@@ -11,7 +11,7 @@ func move(val):
 	$Base.linear_velocity = Vector2(val,0)*60
 
 func set_power(val):
-	$Base/Label.text = str( floor( val ) )
+	$Base/Label.text = str(floor(val*100))+"%"
 
 func shoot(val):
-	$Arm.angular_velocity = 15+val
+	$Arm.angular_velocity = 6+val*12
