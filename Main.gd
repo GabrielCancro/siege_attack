@@ -36,14 +36,15 @@ func _process(delta):
 #		onClick(null)
 	if Input.is_action_pressed("ui_accept"):
 		if isReady: power = min(power+.2,20)
-	elif power != 0: 
-		$Trabuc.shoot(power)
-		power = 0
-		isReady = false
-		yield(get_tree().create_timer(2),"timeout")
-		create_new_trabuc_rock()
-		yield(get_tree().create_timer(1),"timeout")
-		isReady = true
+	if Input.is_action_just_released("ui_accept"): 
+		if power != 0 && isReady: 
+			$Trabuc.shoot(power)
+			power = 0
+			isReady = false
+			yield(get_tree().create_timer(2),"timeout")
+			create_new_trabuc_rock()
+			yield(get_tree().create_timer(1),"timeout")
+			isReady = true
 	$UI/lb_pow.text = str(floor(power))
 	if current_rock: 
 		$Camera2D.position.x = current_rock.position.x+150
@@ -67,4 +68,4 @@ func update_ui():
 	$UI/lb_fg.text = str(force)+"f\n"+str(angle)+"*"
 	$UI/lb_enemies.text = str(enemies_counter)
 	if enemies_counter <=0: $UI/lb_end_game.visible = true
-	clear_shadow_rocks()
+
