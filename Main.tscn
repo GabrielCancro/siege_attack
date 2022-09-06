@@ -11,7 +11,7 @@
 [ext_resource path="res://assets/cata-arm.png" type="Texture" id=9]
 [ext_resource path="res://assets/cata-base.png" type="Texture" id=10]
 [ext_resource path="res://scripts/Line2DProyection.gd" type="Script" id=11]
-[ext_resource path="res://blocks/Rock1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Trabuc.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Animation" id=2]
 resource_name = "asault"
@@ -225,14 +225,33 @@ text = "30f
 45*"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lb_pow" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -200.0
+margin_top = 331.0
+margin_right = -72.0
+margin_bottom = 459.0
+custom_colors/font_color = Color( 0.988235, 0.984314, 0.709804, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "100"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Line2DProyection" type="Line2D" parent="."]
 points = PoolVector2Array( 0, 0, 6, 0 )
 default_color = Color( 0.827451, 1, 0, 1 )
 script = ExtResource( 11 )
 
-[node name="RockShadow" parent="." instance=ExtResource( 12 )]
-modulate = Color( 0.290196, 0.290196, 0.290196, 0.541176 )
-position = Vector2( 225, 90 )
-collision_layer = 0
-collision_mask = 0
+[node name="Trabuc" parent="." instance=ExtResource( 13 )]
+position = Vector2( 196, 355 )
+
+[node name="ShadowsRocks" type="Timer" parent="."]
+wait_time = 0.3
