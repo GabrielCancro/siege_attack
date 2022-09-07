@@ -7,8 +7,9 @@ func _process(delta):
 	if $Arm.angular_velocity <= 0: $Arm.angular_velocity = -1
 	
 func move(val):
-	if(abs($Base.position.x+val*10)>100): return
-	$Base.linear_velocity = Vector2(val,0)*60
+	if (val>0 && $Base.position.x<60): $Base.linear_velocity = Vector2(60,0)
+	if (val<0 && $Base.position.x>-130): $Base.linear_velocity = Vector2(-60,0)
+	print($Base.position.x)
 
 func set_power(val):
 	$Base/Label.text = str(floor(val*100))+"%"

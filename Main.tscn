@@ -1,9 +1,7 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://blocks/Block_1x1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://assets/bg1.jpg" type="Texture" id=3]
-[ext_resource path="res://Castle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/CastleTOT-Bol.otf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/Tuto.gd" type="Script" id=6]
 [ext_resource path="res://assets/font_big_outline.tres" type="DynamicFont" id=7]
@@ -68,16 +66,6 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor"]
 position = Vector2( 1565, -406.5 )
 shape = SubResource( 3 )
-
-[node name="Castle" parent="." instance=ExtResource( 4 )]
-
-[node name="Stop1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 316, 449 )
-mode = 1
-
-[node name="Stop2" parent="." instance=ExtResource( 1 )]
-position = Vector2( -45, 449 )
-mode = 1
 
 [node name="Trabuc" parent="." instance=ExtResource( 13 )]
 position = Vector2( 141, 465 )
@@ -175,9 +163,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -480.0
-margin_top = -505.0
+margin_top = -525.0
 margin_right = 328.0
-margin_bottom = -367.0
+margin_bottom = -387.0
 custom_fonts/font = ExtResource( 7 )
 text = "Manetené apretado [A] para cargar,
 Soltalo para disparar."
@@ -192,3 +180,6 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Tween" type="Tween" parent="UI"]
+
+[node name="StartCameraPoint" type="Node2D" parent="."]
+position = Vector2( 776, -50 )
