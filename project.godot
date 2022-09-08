@@ -17,7 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 InputManager="*res://scripts/InputManager.gd"
-GC="*res://scripts/GlobalConfig.gd"
+GC="*res://GlobalConfig.gd"
 
 [display]
 
@@ -28,11 +28,11 @@ window/stretch/aspect="keep"
 
 [input]
 
-ui_focus_next={
+ui_accept={
 "deadzone": 0.5,
 "events": [  ]
 }
-ui_accept={
+ui_select={
 "deadzone": 0.5,
 "events": [  ]
 }
@@ -40,11 +40,11 @@ ui_cancel={
 "deadzone": 0.5,
 "events": [  ]
 }
-ui_focus_prev={
+ui_focus_next={
 "deadzone": 0.5,
 "events": [  ]
 }
-ui_select={
+ui_focus_prev={
 "deadzone": 0.5,
 "events": [  ]
 }

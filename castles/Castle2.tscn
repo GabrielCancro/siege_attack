@@ -8,7 +8,7 @@
 [node name="Castle" type="Node2D"]
 
 [node name="Wall" type="Node2D" parent="."]
-position = Vector2( 0, 42 )
+position = Vector2( -397, 42 )
 
 [node name="Block_1x1" parent="Wall" instance=ExtResource( 3 )]
 position = Vector2( 536, 408 )
@@ -39,7 +39,7 @@ rotation = 1.5708
 position = Vector2( 568, 248 )
 
 [node name="Wall2" type="Node2D" parent="."]
-position = Vector2( 271, 42 )
+position = Vector2( -126, 42 )
 
 [node name="Block_2x2" parent="Wall2" instance=ExtResource( 4 )]
 position = Vector2( 484, 392 )
@@ -53,7 +53,7 @@ position = Vector2( 484, 296 )
 rotation = 1.5708
 
 [node name="Wall4" type="Node2D" parent="."]
-position = Vector2( 528, 42 )
+position = Vector2( 131, 42 )
 
 [node name="Block_2x2" parent="Wall4" instance=ExtResource( 4 )]
 position = Vector2( 484, 392 )
@@ -67,7 +67,7 @@ position = Vector2( 484, 296 )
 rotation = 1.5708
 
 [node name="Wall3" type="Node2D" parent="."]
-position = Vector2( 447, 42 )
+position = Vector2( 50, 42 )
 
 [node name="Block_2x2" parent="Wall3" instance=ExtResource( 4 )]
 position = Vector2( 436, 392 )
@@ -88,7 +88,7 @@ rotation = 1.5708
 position = Vector2( 437, 169 )
 
 [node name="Wall5" type="Node2D" parent="."]
-position = Vector2( 740, 42 )
+position = Vector2( 343, 42 )
 
 [node name="Block_2x2" parent="Wall5" instance=ExtResource( 4 )]
 position = Vector2( 436, 392 )
@@ -125,7 +125,7 @@ position = Vector2( 557, 248 )
 rotation = 1.5708
 
 [node name="Enems" type="Node2D" parent="."]
-position = Vector2( 447, 42 )
+position = Vector2( 50, 42 )
 
 [node name="Enemy6" parent="Enems" instance=ExtResource( 1 )]
 position = Vector2( 577, 256 )
@@ -158,9 +158,9 @@ position = Vector2( 766, 271 )
 position = Vector2( 813, 271 )
 
 [node name="Block_large_1" parent="." instance=ExtResource( 2 )]
-position = Vector2( 810, 266 )
+position = Vector2( 413, 266 )
 rotation = -0.523599
 
 [node name="Block_large_2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 956, 266 )
+position = Vector2( 559, 266 )
 rotation = 0.523599

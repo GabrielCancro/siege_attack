@@ -14,7 +14,7 @@ var texts = [
 func _ready():
 	$Label.visible = false
 	yield(get_tree().create_timer(2),"timeout")
-	next_tuto(0)
+	if GC.castle_index==0: next_tuto(0)
 
 func next_tuto(index=0):
 	if isStoped: return
