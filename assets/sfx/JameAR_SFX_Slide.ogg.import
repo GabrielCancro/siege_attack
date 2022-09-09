@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/JameAR_SFX_Slide.ogg-171ea9929b896844a52c435a4a38d890.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/JameAR_SFX_Slide.ogg"
+dest_files=[ "res://.import/JameAR_SFX_Slide.ogg-171ea9929b896844a52c435a4a38d890.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

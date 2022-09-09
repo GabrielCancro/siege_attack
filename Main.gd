@@ -8,6 +8,7 @@ enum EXIT_CODES {
 var ROCKS = {
 	"standar": preload("res://blocks/Rock_standar.tscn"),
 	"small": preload("res://blocks/Rock_small.tscn"),
+	"chain": preload("res://blocks/Rock_chain.tscn"),
 }
 var rocks_array = ["standar"]
 var enemies_counter = 0
@@ -59,22 +60,10 @@ func create_new_trabuc_rock():
 	var next_rock = rocks_array.pop_front()
 	$UI/lb_shoots.text = str(rocks_array.size())
 	current_rock = null
-	if next_rock=="standar":
-		var b = ROCKS.standar.instance()
-		b.position = $Trabuc/Arm/ReloadPoint.global_position
-		add_child(b)
-		current_rock = b
-	if next_rock=="small":
-		var b = ROCKS.small.instance()
-		b.position = $Trabuc/Arm/ReloadPoint.global_position - Vector2(0,0)
-		add_child(b)
-		b = ROCKS.small.instance()
-		b.position = $Trabuc/Arm/ReloadPoint.global_position - Vector2(-5,-5)
-		add_child(b)
-		b = ROCKS.small.instance()
-		b.position = $Trabuc/Arm/ReloadPoint.global_position - Vector2(5,-5)
-		add_child(b)
-		current_rock = b
+	var b = ROCKS[next_rock].instance()
+	b.position = $Trabuc/Arm/ReloadPoint.global_position
+	add_child(b)
+	current_rock = b
 
 func add_enemy(val):
 	enemies_counter += val

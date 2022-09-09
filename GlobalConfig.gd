@@ -7,7 +7,7 @@ var castles_nodes = [
 	preload("res://castles/Castle3.tscn"),
 ]
 var rocks_types = [
-	["standar","standar","standar","standar","standar","standar","standar"],
+	["chain","chain","chain","chain","standar","standar","standar"],
 	["standar","standar","standar","standar","standar","standar","standar"],
 	["standar","standar","standar","standar","standar","standar","standar","standar","standar"],
 ]
