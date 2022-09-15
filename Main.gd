@@ -7,8 +7,9 @@ enum EXIT_CODES {
 }
 var ROCKS = {
 	"standar": preload("res://blocks/Rock_standar.tscn"),
-	"small": preload("res://blocks/Rock_small.tscn"),
-	"chain": preload("res://blocks/Rock_chain.tscn"),
+#	"small": preload("res://blocks/Rock_small.tscn"),
+#	"chain": preload("res://blocks/Rock_chain.tscn"),
+	"multi": preload("res://blocks/Rock_multi.tscn"),
 }
 var rocks_array = ["standar"]
 var enemies_counter = 0
@@ -51,19 +52,23 @@ func _process(delta):
 		$UI/lb_press.visible = false
 	$UI/lb_state.text = state
 	if state=="READY": $Camera2D.position.x = $Trabuc.position.x + 200
-	elif state=="SHOOTED" && current_rock: $Camera2D.position.x = current_rock.position.x+150
+	elif state=="SHOOTED" && current_rock: 
+		if current_rock.get_class()=="Node2D": current_rock=current_rock.get_child(0)
+		$Camera2D.position.x = current_rock.position.x+150
 	elif state=="SHOWED": $Camera2D.position.x = 1000
 
 func create_new_trabuc_rock():
+	print(rocks_array.size())
 	if enemies_counter<=0: endGame(true)
 	elif rocks_array.size()==0: endGame(false)
-	var next_rock = rocks_array.pop_front()
-	$UI/lb_shoots.text = str(rocks_array.size())
-	current_rock = null
-	var b = ROCKS[next_rock].instance()
-	b.position = $Trabuc/Arm/ReloadPoint.global_position
-	add_child(b)
-	current_rock = b
+	else:
+		var next_rock = rocks_array.pop_front()
+		$UI/lb_shoots.text = str(rocks_array.size())
+		current_rock = null
+		var b = ROCKS[next_rock].instance()
+		b.position = $Trabuc/Arm/ReloadPoint.global_position
+		add_child(b)
+		current_rock = b
 
 func add_enemy(val):
 	enemies_counter += val
@@ -73,11 +78,11 @@ func add_enemy(val):
 func endGame(win=false):
 	set_process(false)
 	if win: 
-		if GC.castle_index>=GC.castles_nodes.size()-1: 
+#		if GC.castle_index>=GC.castles_nodes.size()-1: 
 			$UI/lb_end_game.text = "HAS GANADO!!"
 			yield(get_tree().create_timer(1),"timeout")
-		else: $UI/lb_end_game.text = "ASEDIO EXITOSO!"
-		$UI/lb_end_game.modulate = Color(1,1,.5,1)
+#		else: $UI/lb_end_game.text = "ASEDIO EXITOSO!"
+#		$UI/lb_end_game.modulate = Color(1,1,.5,1)
 	else:
 		$UI/lb_end_game.text = "PERDISTE!!"
 		$UI/lb_end_game.modulate = Color(1,.5,.5,1)
@@ -87,12 +92,14 @@ func endGame(win=false):
 	$UI/Tween.start()
 	yield(get_tree().create_timer(2),"timeout")
 	if win:
-		 if GC.castle_index>=GC.castles_nodes.size(): get_tree().quit(EXIT_CODES.WIN);
-		 else: get_tree().reload_current_scene()
+#		if GC.castle_index>=GC.castles_nodes.size(): get_tree().quit(EXIT_CODES.WIN);
+#		else: get_tree().reload_current_scene()
+		get_tree().quit(EXIT_CODES.WIN);
 	else: get_tree().quit(EXIT_CODES.LOSE);
 
 func create_next_castle():
-	GC.castle_index += 1
+#	GC.castle_index += 1
+	GC.castle_index = randi()%GC.castles_nodes.size()
 	$UI/lb_sieges_count.text = str(GC.castle_index+1)+"/"+str(GC.castles_nodes.size())
 	current_castle = GC.castles_nodes[GC.castle_index].instance()
 	current_castle.position.x += 500

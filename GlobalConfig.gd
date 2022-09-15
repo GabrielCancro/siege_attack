@@ -7,17 +7,7 @@ var castles_nodes = [
 	preload("res://castles/Castle3.tscn"),
 ]
 var rocks_types = [
-	["chain","chain","chain","chain","standar","standar","standar"],
-	["standar","standar","standar","standar","standar","standar","standar"],
-	["standar","standar","standar","standar","standar","standar","standar","standar","standar"],
+	["standar","multi","standar","multi","standar"],
+	["standar","multi","standar","multi","standar"],
+	["standar","multi","standar","multi","standar","multi"],
 ]
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

@@ -96,6 +96,9 @@ margin_right = -2.0
 margin_bottom = 56.0
 texture = ExtResource( 8 )
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="lb_shoots" type="Label" parent="UI"]
 anchor_left = 0.5
@@ -160,6 +163,7 @@ align = 1
 valign = 1
 
 [node name="lb_sieges_count" type="Label" parent="UI"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = 360.0
