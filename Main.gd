@@ -80,11 +80,13 @@ func endGame(win=false):
 	if win: 
 #		if GC.castle_index>=GC.castles_nodes.size()-1: 
 			$UI/lb_end_game.text = "HAS GANADO!!"
+			$Audio_win.play()
 			yield(get_tree().create_timer(1),"timeout")
 #		else: $UI/lb_end_game.text = "ASEDIO EXITOSO!"
 #		$UI/lb_end_game.modulate = Color(1,1,.5,1)
 	else:
 		$UI/lb_end_game.text = "PERDISTE!!"
+		$Audio_lose.play()
 		$UI/lb_end_game.modulate = Color(1,.5,.5,1)
 	$UI/lb_end_game.visible = true
 	yield(get_tree().create_timer(1),"timeout")

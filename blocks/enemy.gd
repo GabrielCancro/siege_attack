@@ -13,6 +13,7 @@ func onCollision(body):
 	print(body.name)
 	isDead = true	
 	$Blood.emitting = true
+	$AudioStreamPlayer2D.play()
 	yield(get_tree().create_timer(.7),"timeout")
 	get_node("/root/Main").add_enemy(-1)
 	yield(get_tree().create_timer(.7),"timeout")

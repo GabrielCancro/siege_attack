@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lose.mp3-157d8c9c650300cc28c58c19a9cfca8c.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/lose.mp3"
+dest_files=[ "res://.import/lose.mp3-157d8c9c650300cc28c58c19a9cfca8c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

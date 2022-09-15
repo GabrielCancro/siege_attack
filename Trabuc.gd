@@ -16,3 +16,4 @@ func set_power(val):
 
 func shoot(val):
 	$Arm.angular_velocity = 6+val*12
+	$AudioStreamPlayer2D.play()
