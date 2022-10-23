@@ -32,7 +32,7 @@ func _ready():
 	create_next_castle()
 
 func _process(delta):
-	if Input.is_action_pressed("escape"): get_tree().quit(EXIT_CODES.WIN);
+	if Input.is_action_pressed("escape"): get_tree().quit(EXIT_CODES.QUIT);
 	if Input.is_action_pressed("right"): $Trabuc.move(+1)
 	if Input.is_action_pressed("left"): $Trabuc.move(-1)
 	if Input.is_action_pressed("action1") && state=="READY":
